@@ -66,6 +66,12 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\products\productListView.html" />
+    <Content Include="app\welcomeView.html" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="js\angular-ui-router.js" />
+    <Content Include="js\bootstrap.js" />
+    <Content Include="js\jquery-2.2.4.js" />
     <Content Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -94,7 +100,6 @@
   <ItemGroup>
     <Folder Include="app\prices\" />
     <Folder Include="fonts\" />
-    <Folder Include="images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

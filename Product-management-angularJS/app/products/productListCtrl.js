@@ -3,7 +3,7 @@
 (function (module) {
   "use strict";
 
-  var ProductListController = function (productResource) {
+  var ProductListCtrl = function (productResource) {
     var vm = this;
 
     productResource.query(function (data) {
@@ -17,6 +17,6 @@
     };
   };
 
-  module.controller("ProductListController", ["productResource", ProductListController]);
+  module.controller("ProductListCtrl", ["productResource", ProductListCtrl]);
 
 }(angular.module("productManagement")));
