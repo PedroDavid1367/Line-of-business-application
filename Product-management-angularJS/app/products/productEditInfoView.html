@@ -13,7 +13,7 @@
                id="inputProductName"
                name="inputProductName"
                type="text"
-               placeholder="Product Name (required)"
+               placeholder="Product Name"
                ng-model="vm.product.productName"
                required
                ng-minlength="4"
@@ -40,7 +40,7 @@
         <input class="form-control"
                id="inputProductCode"
                name="inputProductCode"
-               ui-mask="AAA-**** (required)"
+               ui-mask="AAA-****"
                ng-model="vm.product.productCode"
                required>
       </div>
@@ -58,9 +58,10 @@
           <input class="form-control"
                  id="inputAvailabilityDate"
                  type="text"
-                 datepicker-popup="MMM dd, yyyy "
+                 uib-datepicker-popup="dd-MMMM-yyyy"
                  is-open="vm.opened"
-                 ng-model="vm.product.releaseDate" />
+                 ng-model="vm.product.releaseDate" 
+                 close-text="Close"/>
           <span class="input-group-btn">
             <button class="btn btn-default"
                     ng-click="vm.open($event)">

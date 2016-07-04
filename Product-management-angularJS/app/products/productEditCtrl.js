@@ -37,6 +37,7 @@
       vm.title = "New Product";
     }
 
+    // For uib-datepicker-popup
     vm.open = function ($event) {
       $event.preventDefault();
       $event.stopPropagation();
