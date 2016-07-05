@@ -46,7 +46,7 @@
       vm.opened = !vm.opened;
     };
 
-    // This might be refactored as a component.
+    // This might be refactored as a directive/component.
     vm.submit = function (isValid) {
       if (product.productName && product.productCode) {
         if (isValid) {

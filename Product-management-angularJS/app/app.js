@@ -25,7 +25,7 @@
         templateUrl: "app/products/productListView.html",
         controller: "ProductListCtrl as vm"
       })
-      .state("producDetail", {
+      .state("productDetail", {
         url: "/products/:productId",
         templateUrl: "app/products/productDetailView.html",
         controller: "ProductDetailCtrl as vm",

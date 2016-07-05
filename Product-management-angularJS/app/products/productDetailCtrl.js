@@ -1,8 +1,9 @@
-﻿/// <reference path="C:\Repositories\Line-of-business-application\Product-management-angularJS\js/angular.js" />
+/// <reference path="C:\Repositories\Line-of-business-application\Product-management-angularJS\js/angular.js" />
+/// <reference path="C:\Repositories\Line-of-business-application\Product-management-angularJS\common/services/productService.js" />
 
 (function (module) {
   "use strict";
-
+  
   var ProductDetailCtrl = function (product, productService) {
     var vm = this;
 
@@ -18,8 +19,9 @@
     }
   };
 
-  module.controller("ProductDetailCtrl", ["product",
-                                          "productService",
-                                          ProductDetailCtrl]);
+  module.controller("ProductDetailCtrl",
+                   ["product",
+                    "productService",
+                    ProductDetailCtrl]);
 
 }(angular.module("productManagement")));
