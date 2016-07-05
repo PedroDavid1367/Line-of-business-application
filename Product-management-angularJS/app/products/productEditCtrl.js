@@ -1,4 +1,5 @@
 ﻿/// <reference path="C:\Repositories\Line-of-business-application\Product-management-angularJS\js/angular.js" />
+/// <reference path="C:\Repositories\Line-of-business-application\Product-management-angularJS\js/toastr.js" />
 
 (function (module) {
   "use strict";
@@ -45,13 +46,19 @@
       vm.opened = !vm.opened;
     };
 
+    // This might be refactored as a component.
     vm.submit = function (isValid) {
-      if (isValid) {
-        vm.product.$save(function (data) {
-          toastr.success("Save Successful");
-        })
+      if (product.productName && product.productCode) {
+        if (isValid) {
+          vm.product.$save(function (data) {
+            toastr.success("Save Successful");
+          })
+        } else {
+          toastr.error("Please correct the validation errors first.");
+        }
       } else {
-        alert("Please correct the validation errors first.");
+        toastr.error("Please correct the validation errors first.");
+        //alert("Please correct the validation errors first.");
       }
     };
 

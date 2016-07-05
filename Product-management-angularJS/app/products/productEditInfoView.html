@@ -2,6 +2,7 @@
       novalidate>
   <fieldset>
     <legend>Basic Product Information</legend>
+
     <div class="form-group"
          ng-class="{'has-error':productForm.inputProductName.$invalid &&
                                     productForm.inputProductName.$dirty}">
@@ -20,6 +21,19 @@
                ng-maxlength="12" />
       </div>
       <span class="help-block has-error">
+        <span ng-messages="productForm.inputProductName.$error">
+          <span ng-message="required">
+            Product name is required.
+          </span>
+          <span ng-message="minlength">
+            Product name must be at least 4 characters in length.
+          </span>
+          <span ng-message="maxlength">
+            Product name cannot exceed 12 characters in length.
+          </span>
+        </span>
+      </span>
+      <!--<span class="help-block has-error">
         <span ng-show="productForm.inputProductName.$error.required">
           Product name is required.
         </span>
@@ -29,8 +43,9 @@
         <span ng-show="productForm.inputProductName.$error.maxlength">
           Product name cannot exceed 12 characters in length.
         </span>
-      </span>
+      </span>-->
     </div>
+
     <div class="form-group"
          ng-class="{'has-error':productForm.inputProductCode.$invalid &&
                                     productForm.inputProductCode.$dirty}">
@@ -49,6 +64,7 @@
         Product Code is required
       </span>
     </div>
+
     <div class="form-group">
       <label class="col-md-2 control-label"
              for="inputAvailabilityDate">Availability</label>
@@ -60,8 +76,8 @@
                  type="text"
                  uib-datepicker-popup="dd-MMMM-yyyy"
                  is-open="vm.opened"
-                 ng-model="vm.product.releaseDate" 
-                 close-text="Close"/>
+                 ng-model="vm.product.releaseDate"
+                 close-text="Close" />
           <span class="input-group-btn">
             <button class="btn btn-default"
                     ng-click="vm.open($event)">
@@ -90,8 +106,7 @@
         <span>
           <button class="btn btn-primary"
                   style="width:80px;margin-right:10px"
-                  ng-click="vm.submit(productForm.$valid)"
-                  ng-disabled="productForm.$invalid">
+                  ng-click="vm.submit(productForm.$valid)">
             Save
           </button>
         </span>

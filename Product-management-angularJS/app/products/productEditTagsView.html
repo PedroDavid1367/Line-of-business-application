@@ -1,6 +1,7 @@
 <form class="form-horizontal" name="productTagsForm">
   <fieldset>
     <legend>Product Search Tags</legend>
+
     <div class="form-group">
       <label class="col-md-2 control-label" for="inputSearchTags">Search Tags</label>
       <div class="col-md-8">
@@ -17,16 +18,20 @@
         </button>
       </div>
     </div>
-    <div class="row col-md-8 col-md-offset-2">
-      <span ng-repeat="tag in vm.product.tags | orderBy">
-        <button class="btn btn-default"
-                style="font-size:smaller;margin-bottom:12px"
-                ng-click="vm.removeTag($index)">
-          {{tag}}
-          <span class="glyphicon glyphicon-remove"></span>
-        </button>
-      </span>
+
+    <div class="form-group">
+      <div class="col-md-8 col-md-offset-2">
+        <span ng-repeat="tag in vm.product.tags | orderBy">
+          <button class="btn btn-xs btn-info"
+                  style="font-size:smaller;margin-bottom:12px"
+                  ng-click="vm.removeTag($index)">
+            {{tag}}
+            <span class="glyphicon glyphicon-remove"></span>
+          </button>
+        </span>
+      </div>
     </div>
+ 
     <div class="form-group">
       <div class="col-md-4 col-md-offset-2">
         <span>
@@ -46,5 +51,6 @@
         </span>
       </div>
     </div>
+
   </fieldset>
 </form>

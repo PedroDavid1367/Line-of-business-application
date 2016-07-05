@@ -8,6 +8,7 @@
                            "ui.router",
                            "ui.mask",
                            "ui.bootstrap",
+                           "ngMessages",
                            "productResourceMock"]);
 
   var stateConfiguration = function ($stateProvider, $urlRouterProvider) {
