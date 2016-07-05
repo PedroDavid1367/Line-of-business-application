@@ -69,6 +69,36 @@
 
     <div class="form-group"
          ng-if="vm.priceOption=='amount'"
+         ng-class="{'has-error': productPriceForm.inputMarkupPercent.$invalid &&
+                                 productPriceForm.inputMarkupPercent.$dirty}">
+      <label class="col-md-3 control-label"
+             for="inputMarkupPercent">Markup Amount</label>
+      <div class="col-md-4">
+        <input class="form-control"
+               id="inputMarkupPercent"
+               name="inputMarkupPercent"
+               type="number"
+               placeholder="Markup $"
+               ng-model="vm.markupAmount"
+               style="text-align:right" />
+      </div>
+      <div class="col-md-2">
+        <button type="button"
+                class="btn btn-primary"
+                title="Calculate the price based on the code plus a markup amount"
+                ng-click="vm.calculatePrice()">
+          Calculate
+        </button>
+      </div>
+      <span class="help-block"
+            ng-show="productPriceForm.inputMarkupPercent.$invalid &&
+                     productPriceForm.inputMarkupPercent.$dirty">
+        Mark up percentage must be a valid number.
+      </span>
+    </div>
+
+    <!--<div class="form-group"
+         ng-if="vm.priceOption=='amount'"
          ng-class="{'has-error': productPriceForm.inputMarkupAmount.$invalid &&
                                  productPriceForm.inputMarkupAmount.$dirty}">
       <div class="col-md-6 col-md-offset-3">
@@ -95,12 +125,12 @@
           </div>
         </div>
         <span class="help-block "
-              ng-show=" productPriceForm.inputMarkupAmount.$invalid &&
-              productPriceForm.inputMarkupAmount.$dirty">
+              ng-show="productPriceForm.inputMarkupAmount.$invalid &&
+                       productPriceForm.inputMarkupAmount.$dirty">
           Mark up amount must be a valid number.
         </span>
       </div>
-    </div>
+    </div>-->
 
     <div class="form-group">
       <label class="col-md-3 control-label" for="inputPrice">Price</label>
@@ -114,15 +144,15 @@
                ng-model="vm.product.price"
                style="text-align:right" />
       </div>
-      <span class="help-block "
-            ng-show=" productPriceForm.inputPrice.$invalid &&
-            productPriceForm.inputPrice.$dirty">
+      <span class="help-block"
+            ng-show="productPriceForm.inputPrice.$invalid &&
+                     productPriceForm.inputPrice.$dirty">
         Price must be a valid number.
       </span>
     </div>
 
-    <div class="row">
-      <div class="col-md-2" style="text-align:right">Margin </div>
+    <div class="form-group">
+      <div class="col-md-3" style="text-align:right;">Margin </div>
       <div class="col-md-4">{{vm.marginPercent() | number:0}}%</div>
     </div>
 
